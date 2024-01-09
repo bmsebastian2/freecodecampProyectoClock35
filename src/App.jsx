@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import "./App.css";
 const App = () => {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25);
@@ -67,14 +67,14 @@ const App = () => {
   }, [isActive, breakLength, sessionLength, timerLabel]);
 
   return (
-    <div className="App">
+    <main className="App">
       <div id="break-label">Break Length</div>
       <div id="session-label">Session Length</div>
       <div id="break-decrement" onClick={decrementBreak}>
-        Decrement Break
+        decremento
       </div>
       <div id="break-increment" onClick={incrementBreak}>
-        Increment Break
+        iNcremento
       </div>
       <div id="break-length">{breakLength}</div>
       <div id="session-decrement" onClick={decrementSession}>
@@ -90,13 +90,13 @@ const App = () => {
         .toString()
         .padStart(2, "0")}`}</div>
       <div id="start_stop" onClick={toggleTimer}>
-        Start/Stop
+        iNICIO/PARAR
       </div>
       <div id="reset" onClick={resetTimer}>
-        Reset
+        RESETEAR
       </div>
-      <audio id="beep" ref={audioRef} src="pepetrueno.mp3" />
-    </div>
+      <audio id="beep" ref={audioRef} src="/pepetrueno.mp3" />
+    </main>
   );
 };
 
